@@ -1,0 +1,44 @@
+.footer {
+  max-width: 1200px;
+  width: 92%;
+  margin: 40px auto 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 25px 0;
+  border-top: 1px solid #ddd;
+}
+
+.footer h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer h1 {
+    font-size: 18px;
+  }
+
+  .footer p {
+    font-size: 13px;
+  }
+}
