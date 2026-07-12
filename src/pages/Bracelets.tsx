@@ -1,4 +1,4 @@
-
+import type { Product } from "../types/Product";
 import "./ProductPage.css";
 import ProductCard from "../components/ProductCard";
 import { useCart } from "../context/CartContext";
@@ -19,7 +19,6 @@ import Brace12 from "../assets/Images/Brace12.png";
 import Brace13 from "../assets/Images/Brace13.png";
 import Brace14 from "../assets/Images/Brace14.png";
 
-
 const Bracelets = () => {
   const { addToCart, cart } = useCart();
 
@@ -31,7 +30,7 @@ const Bracelets = () => {
       image: Brace1,
     },
     {
-      id:102,
+      id: 102,
       name: "Silver Passionate Diamond Bracelet",
       price: 1499,
       image: Brace2,
@@ -55,13 +54,13 @@ const Bracelets = () => {
       image: Brace5,
     },
     {
-      id:106,
+      id: 106,
       name: "Gold Shine Bracelet",
       price: 2000,
       image: Brace6,
     },
     {
-      id:107,
+      id: 107,
       name: "Gold Glittering Bracelet",
       price: 3000,
       image: Brace7,
@@ -73,7 +72,7 @@ const Bracelets = () => {
       image: Brace8,
     },
     {
-      id:109,
+      id: 109,
       name: "Gold Sanon Bracelet",
       price: 1190,
       image: Brace9,
@@ -110,8 +109,8 @@ const Bracelets = () => {
     },
   ];
 
-  const handleAddToCart = (product: any) => {
-    const alreadyInCart = cart.some((item: any) => item.id === product.id);
+  const handleAddToCart = (product: Product) => {
+    const alreadyInCart = cart.some((item) => item.id === product.id);
 
     if (alreadyInCart) {
       toast.info("Item already in cart");
@@ -131,7 +130,7 @@ const Bracelets = () => {
           name={product.name}
           price={product.price}
           onAddToCart={() => handleAddToCart(product)}
-          isAdded={cart.some((item: any) => item.id === product.id)}
+          isAdded={cart.some((item) => item.id === product.id)}
         />
       ))}
     </div>

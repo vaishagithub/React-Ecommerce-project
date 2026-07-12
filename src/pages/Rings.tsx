@@ -1,6 +1,6 @@
-
-import ProductCard from '../components/ProductCard';
-import { useCart } from '../context/CartContext';
+import type { Product } from "../types/Product";
+import ProductCard from "../components/ProductCard";
+import { useCart } from "../context/CartContext";
 import ring1 from "../assets/Images/ring1.png";
 import ring2 from "../assets/Images/ring2.png";
 import ring3 from "../assets/Images/ring3.png";
@@ -20,10 +20,9 @@ import { toast } from "react-toastify";
 
 import "./ProductPage.css";
 
-
 const Rings = () => {
-  const {addToCart,cart}  = useCart();
-  
+  const { addToCart, cart } = useCart();
+
   const products = [
     {
       id: 1,
@@ -115,19 +114,18 @@ const Rings = () => {
       price: 2500,
       image: ring15,
     },
-   
   ];
-  const handleAddToCart = (product: any) => {
-      const alreadyInCart = cart.some((item: any) => item.id === product.id);
-  
-      if (alreadyInCart) {
-        toast.info("Item already in cart");
-        return;
-      }
-  
-      addToCart(product);
-      toast.success(`${product.name} added to cart`);
-    };
+  const handleAddToCart = (product:Product) => {
+    const alreadyInCart = cart.some((item) => item.id === product.id);
+
+    if (alreadyInCart) {
+      toast.info("Item already in cart");
+      return;
+    }
+
+    addToCart(product);
+    toast.success(`${product.name} added to cart`);
+  };
   return (
     <div className="products-container">
       {/* <Navbar/> */}
@@ -138,12 +136,12 @@ const Rings = () => {
           name={product.name}
           price={product.price}
           onAddToCart={() => handleAddToCart(product)}
-          isAdded={cart.some((item: any) => item.id === product.id)}
+          isAdded={cart.some((item) => item.id === product.id)}
           // cartItem={cart.find((item: any) => item.id === product.id)}
         />
       ))}
     </div>
   );
-}
+};
 
-export default Rings
+export default Rings;
