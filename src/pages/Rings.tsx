@@ -5,7 +5,7 @@ import ring1 from "../assets/Images/ring1.png";
 import ring2 from "../assets/Images/ring2.png";
 import ring3 from "../assets/Images/ring3.png";
 import ring4 from "../assets/Images/ring4.png";
-import ring5 from "../assets/images/ring5.png";
+import ring5 from "../assets/Images/ring5.png";
 import ring6 from "../assets/Images/ring6.png";
 import ring7 from "../assets/Images/ring7.png";
 import ring8 from "../assets/Images/ring8.png";

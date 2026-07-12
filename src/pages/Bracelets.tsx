@@ -8,7 +8,7 @@ import Brace1 from "../assets/Images/Brace1.png";
 import Brace2 from "../assets/Images/Brace2.png";
 import Brace3 from "../assets/Images/Brace3.png";
 import Brace4 from "../assets/Images/Brace4.png";
-import Brace5 from "../assets/images/Brace5.png";
+import Brace5 from "../assets/Images/Brace5.png";
 import Brace6 from "../assets/Images/Brace6.png";
 import Brace7 from "../assets/Images/Brace7.png";
 import Brace8 from "../assets/Images/Brace8.png";
