@@ -2,6 +2,7 @@ import "../pages/Pendents.css";
 import ProductCard  from "./ProductCard";
 import ring1 from "../assets/Images/ring1.png"
 import "./BestSellers.css"
+import type { Product } from "../types/Product";
 
 import pend1 from "../assets/Images/pend1.png";
 import pend2 from "../assets/Images/pend2.png";
@@ -20,7 +21,8 @@ import { toast } from "react-toastify";
 
 const BestSellers = () => {
   const {addToCart,cart}  = useCart();
-  const products = [
+ 
+  const products: Product[]= [
     {
       id: 1,
       name: "snowfall ring",
@@ -70,8 +72,8 @@ const BestSellers = () => {
       image: pend4,
     },
   ];
-  const handleAddToCart = (product: any) => {
-        const alreadyInCart = cart.some((item: any) => item.id === product.id);
+  const handleAddToCart = (product: Product) => {
+        const alreadyInCart = cart.some((item) => item.id === product.id);
     
         if (alreadyInCart) {
           toast.info("Item already in cart");
@@ -99,6 +101,7 @@ const BestSellers = () => {
             name={product.name}
             price={product.price}
             onAddToCart={() => handleAddToCart(product)}
+            isAdded={false}
           />
         ))}
       </div>

@@ -2,13 +2,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "../context/CartContext";
 import "./Cart.css";
+import type { CartItem } from "../types/Product";
 
 const Cart = () => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
     useCart();
 
   const total = cart.reduce(
-    (sum: number, item: any) => sum + item.price * item.quantity,
+    (sum:number, item:CartItem) => sum + item.price * item.quantity,
     0,
   );
 
@@ -20,7 +21,7 @@ const Cart = () => {
         <h3>Your cart is empty</h3>
       ) : (
         <>
-          {cart.map((item: any) => (
+          {cart.map((item: CartItem) => (
             <div className="cart-item" key={item.id}>
               <img src={item.image} alt={item.name} />
 

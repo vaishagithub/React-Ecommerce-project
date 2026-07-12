@@ -1,4 +1,4 @@
-import React from 'react'
+
 import store  from"../assets/Images/stores.webp"
 import Footer from '../components/Footer'
 import "./Stores.css"

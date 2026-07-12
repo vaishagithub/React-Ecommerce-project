@@ -1,5 +1,5 @@
 import "./ProductCard.css";
-import { useCart } from "../context/CartContext";
+
 type ProductCardProps = {
   image: string;
   name: string;

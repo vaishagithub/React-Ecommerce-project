@@ -1,5 +1,5 @@
 
-import Categories from '../components/Categories'
+// import Categories from '../components/Categories'
 import BestSellers from '../components/BestSellers'
 import LatestCollections from '../components/LatestCollections'
 import Footer from '../components/Footer'

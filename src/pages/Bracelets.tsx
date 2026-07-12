@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./ProductPage.css";
 import ProductCard from "../components/ProductCard";
 import { useCart } from "../context/CartContext";

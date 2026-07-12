@@ -1,6 +1,7 @@
 import "../pages/Pendents.css";
 import ProductCard from "./ProductCard";
 import ring2 from "../assets/Images/ring2.png";
+import type { Product } from "../types/Product";
 
 import "./LatestCollections.css";
 import pend5 from "../assets/Images/pend5.png";
@@ -65,8 +66,8 @@ const LatestCollections = () => {
       image: ring2,
     },
   ];
-  const handleAddToCart = (product: any) => {
-      const alreadyInCart = cart.some((item: any) => item.id === product.id);
+  const handleAddToCart = (product: Product) => {
+      const alreadyInCart = cart.some((item) => item.id === product.id);
   
       if (alreadyInCart) {
         toast.info("Item already in cart");
@@ -86,8 +87,8 @@ const LatestCollections = () => {
             image={product.image}
             name={product.name}
             price={product.price}
-             onAddToCart={() => handleAddToCart(product)}
-            
+            onAddToCart={() => handleAddToCart(product)}
+            isAdded={false}
           />
         ))}
       </div>

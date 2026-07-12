@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState ,useMemo} from "react";
 import "./Navbar.css";
 import logo from "../assets/Images/logo2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faBars, faCartShopping, faCircle, faHeart, faMagnifyingGlass, faPlus, faStore, faTruckMoving, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {faBars, faCartShopping,  faMagnifyingGlass, faPlus, faStore,  faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import {useCart} from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
@@ -13,9 +13,9 @@ const Navbar = () => {
   const [banner, setBanner] = useState("0% Making Charges on Gold Jewellery");
   const [currenIndex, setCurrentIndex] = useState(0);
   const [isSidebarOPen, setIsSidebarOpen] = useState(false);
-  const [active, setActive] = useState("silver");
+  // const [active, setActive] = useState("silver");
   const [search, setSearch] = useState("");
-  const [showDrop,setShowDrop] = useState(false);
+  
 
   const { user, logout } = useAuth();
   
@@ -33,13 +33,16 @@ const Navbar = () => {
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase()),
   );
-  const placeholder = [
-    "Search 'Ring'",
-    "Search 'Pendants'",
-    "search 'Bracelets'",
-    "Search 'Necklaces'",
-    "Search 'NosePins '",
-  ]
+   const placeholder = useMemo(
+     () => [
+       "Search 'Ring'",
+       "Search 'Pendants'",
+       "Search 'Bracelets'",
+       "Search 'Necklaces'",
+       "Search 'NosePins'",
+     ],
+     [],
+   );
   
   
 
@@ -47,10 +50,10 @@ const Navbar = () => {
   
   useEffect(()=>{
     const interval = setInterval(()=>{
-setCurrentIndex((prev)=> prev === placeholder.length-1 ? 0 : prev + 1)
+setCurrentIndex((prev)=> prev === placeholder.length-1 ? 0 : prev + 1);
     },3000);
     return(()=>clearInterval(interval));
-  },[])
+  },[placeholder])
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ProductCard from '../components/ProductCard';
 import { useCart } from '../context/CartContext';
 import ring1 from "../assets/Images/ring1.png";

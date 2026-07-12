@@ -1,4 +1,4 @@
-import React from 'react'
+
 import giftcard from "../assets/Images/GiftCard.webp"
 import "./ProductPage.css";
 import Footer from '../components/Footer'

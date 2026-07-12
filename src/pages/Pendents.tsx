@@ -1,5 +1,5 @@
+import type { Product } from "../types/Product";
 
-import React from "react";
 import "./ProductPage.css";
 
 import ProductCard from "../components/ProductCard";
@@ -21,12 +21,8 @@ import pend14 from "../assets/Images/pend14.png";
 import pend15 from "../assets/Images/pend15.png";
 import { toast } from "react-toastify";
 
-
-
-
-
 const Pendents = () => {
-  const {addToCart,cart}  = useCart();
+  const { addToCart, cart } = useCart();
   const products = [
     {
       id: 21,
@@ -41,7 +37,7 @@ const Pendents = () => {
       image: pend2,
     },
     {
-      id:23,
+      id: 23,
       name: "Zircon Beachy Waves  pendents",
       price: 1500,
       image: pend3,
@@ -119,17 +115,17 @@ const Pendents = () => {
       image: pend15,
     },
   ];
-  const handleAddToCart = (product: any) => {
-      const alreadyInCart = cart.some((item: any) => item.id === product.id);
-  
-      if (alreadyInCart) {
-        toast.info("Item already in cart");
-        return;
-      }
-  
-      addToCart(product);
-      toast.success(`${product.name} added to cart`);
-    };
+  const handleAddToCart = (product: Product) => {
+    const alreadyInCart = cart.some((item) => item.id === product.id);
+
+    if (alreadyInCart) {
+      toast.info("Item already in cart");
+      return;
+    }
+
+    addToCart(product);
+    toast.success(`${product.name} added to cart`);
+  };
   return (
     <div className="products-container">
       {products.map((product) => (
@@ -139,7 +135,7 @@ const Pendents = () => {
           name={product.name}
           price={product.price}
           onAddToCart={() => handleAddToCart(product)}
-          isAdded={cart.some((item: any) => item.id === product.id)}
+          isAdded={cart.some((item) => item.id === product.id)}
         />
       ))}
     </div>
